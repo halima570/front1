@@ -1,0 +1,44 @@
+.trends{
+ text-align: center;
+ margin-top: 80px;
+ 
+}
+.hien {
+  opacity:1;
+  transition:all 1s;
+
+  transform: translatey(-50%);
+  filter:blur(2px);
+  }
+  .show{opacity: 1;
+      transform: translateX(0);
+  filter:blur(0);
+  }
+
+.trend{
+  color: black;
+  font-size: 30px;
+  font-weight: bold;
+}
+.App{
+  background-color: #D6EAF8;
+
+}
+
+@media (max-width:768px){
+
+.avantage{
+display: flex;
+  flex-wrap: wrap;
+}
+video{
+width: 100%;
+
+}
+
+
+}
+
+
+
+
