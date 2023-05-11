@@ -13,12 +13,12 @@ function Follow() {
       
       useEffect( () => {
         if(user){
-            axios.get('http://localhost:8081/follow?username='+user.data.username)
+            axios.get('https://rss-pmpu.onrender.com/follow?username='+user.data.username)
             .then(data=>setFollow(data.data))}}, [user])
 
     const getunfollow=(followed)=>{
         console.log(followed);
-            axios.delete('http://localhost:8081/follow?follow='+followed+'&username='+user.data.username).then(data=>
+            axios.delete('https://rss-pmpu.onrender.com/follow?follow='+followed+'&username='+user.data.username).then(data=>
             setFollow(data.data))}
 
 if(follow){

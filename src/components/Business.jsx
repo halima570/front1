@@ -28,7 +28,7 @@ function Business() {
 
           useEffect( () => {
             if(user){
-              axios.get('https://rss2-xt84.onrender.com/follow?username='+user.data.username).
+              axios.get('https://rss-pmpu.onrender.com/follow?username='+user.data.username).
               then(data=>setAllfollow(data.data))}
         }, [user])
         function followsource(source)
@@ -36,7 +36,7 @@ function Business() {
         console.log('====================================');
         console.log(source,"floooow is by ",user.data.username,'rss is');
         console.log('====================================');
-        axios.post('https://rss2-xt84.onrender.com/follow', {
+        axios.post('https://rss-pmpu.onrender.com/follow', {
                username: user.data.username,
                follow: [source]
              })
@@ -58,7 +58,7 @@ function Business() {
                 }
         }
         function unfollowsource(source){
-            axios.delete('https://rss2-xt84.onrender.com/follow?follow='+source+'&username='+user.data.username)
+            axios.delete('https://rss-pmpu.onrender.com/follow?follow='+source+'&username='+user.data.username)
                   .then(data=>setAllfollow(data.data))}
 
         return (

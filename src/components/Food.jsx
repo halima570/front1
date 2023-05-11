@@ -26,12 +26,12 @@ function Food() {
 
   useEffect( () => {
     if(user){
-      axios.get('http://localhost:8081/follow?username='+user.data.username).
+      axios.get('https://rss-pmpu.onrender.com/follow?username='+user.data.username).
       then(data=>setAllfollow(data.data))}
 }, [user])
   function followsource(source)
   {if(user){
-      axios.post('http://localhost:8081/follow', {
+      axios.post('https://rss-pmpu.onrender.com/follow', {
          username: user.data.username,
          follow: [source]
        })
@@ -54,7 +54,7 @@ function Food() {
       }
 
 function unfollowsource(source){
-axios.delete('http://localhost:8081/follow?follow='+source+'&username='+user.data.username)
+axios.delete('https://rss-pmpu.onrender.com/follow?follow='+source+'&username='+user.data.username)
       .then(data=>setAllfollow(data.data))}
    
         return (
