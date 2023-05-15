@@ -10,7 +10,7 @@ const [ml,setMl]=useState(true)
   console.log(articles)
 
   useEffect(()=>{
-axios.get(`http://localhost:4000/getNews?source=${source}`)
+axios.get(`https://rss-h3g4.onrender.com/getNews?source=${source}`)
     .then(res=>{
       setArticles(res.data)
     }).catch(err=>{
