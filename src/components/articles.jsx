@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import {useEffect } from "react"
 import axios from 'axios'
-
 function Articles({source})
 {  
   const [articles,setArticles]=useState([])
@@ -11,7 +10,7 @@ const [ml,setMl]=useState(true)
   console.log(articles)
 
   useEffect(()=>{
-axios.get(`https://rss-nko1.onrender.com/getNews?source=${source}`)
+axios.get(`http://localhost:4000/getNews?source=${source}`)
     .then(res=>{
       setArticles(res.data)
     }).catch(err=>{
