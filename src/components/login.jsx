@@ -17,6 +17,7 @@ function Login() {
     e.preventDefault()
     fetch("https://rss-h3g4.onrender.com/users/login", {
       method: "POST",
+      mode: 'no-cors',
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ username: email, password }),
     }).then((res)=>{
