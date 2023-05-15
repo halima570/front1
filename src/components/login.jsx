@@ -15,8 +15,8 @@ function Login() {
   const { login, user } = useContext(AuthContext);
 
   const formSubmitHandler = (e) => {
-  console.log('hi')
     e.preventDefault();
+  console.log('hi')
 
 axios
   .post("https://rss-h3g4.onrender.com/users/login", {
