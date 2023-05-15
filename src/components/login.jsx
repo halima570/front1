@@ -13,31 +13,33 @@ function Login() {
   const [password, setPassword] = useState("")
   const { login ,user} = useContext(AuthContext);
 
-  const formSubmitHandler = e => {
-    e.preventDefault()
-    fetch("https://rss-h3g4.onrender.com/users/login", {
-      method: "POST",
-      mode: 'no-cors',
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ username: email, password }),
-    }).then((res)=>{
-      if(res.status==401){
-        alert('not authorized')
+  const formSubmitHandler = (e) => {
+  e.preventDefault();
+  fetch("https://rss-pmpu.onrender.com/users/login", {
+    method: "POST",
+    mode: "no-cors",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ username: email, password }),
+  })
+    .then((res) => {
+      if (res.status == 401) {
+        alert("not authorized");
+      } else {
+        return res.json();
       }
-      else{
-return res.json()
-      }
-      }).then((data)=>{
-        
-        login(data)
-        console.log('====================================');
-        console.log(user);
-        console.log('====================================');
-        navigate('/')
-  }
-    
-    )
-  }
+    })
+    .then((data) => {
+      login(data);
+      console.log("====================================");
+      console.log(user);
+      console.log("====================================");
+      navigate("/");
+    })
+    .catch((error) => {
+      console.error("API call failed:", error);
+    });
+};
+
 
 
   return (
