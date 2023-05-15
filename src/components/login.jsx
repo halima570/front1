@@ -15,7 +15,7 @@ function Login() {
   const { login, user } = useContext(AuthContext);
 
   const formSubmitHandler = (e) => {
-  
+  console.log('hi')
     e.preventDefault();
 
 axios
