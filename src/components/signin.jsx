@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react"
 import Login from './login';
 import { Link } from 'react-router-dom';
-
+import axios from 'axios';
 import { useNavigate } from "react-router-dom";
 
 function Singin() {
@@ -14,17 +14,24 @@ const navigate=useNavigate()
   const formSubmitHandler = e => {
     e.preventDefault()
    
-    fetch('https://rss-pmpu.onrender.com/users/signup', {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ username: email, password ,firstName,lastName}),
-    }).then((res)=>res.json())
-    .then(data=>setUserContext(firstName,lastName,email,password),navigate('/Login')
-    
-    
-    
-    )
+axios.post('https://rss-pmpu.onrender.com/users/signup', {
+  username: email,
+  password: password,
+  firstName: firstName,
+  lastName: lastName
+}, {
+  headers: {
+    'Content-Type': 'application/json'
   }
+})
+  .then((res) => res.data)
+  .then((data) => {
+    setUserContext(firstName, lastName, email, password);
+    navigate('/Login');
+  })
+  .catch((error) => {
+    // Handle error
+  });
 
   return (
     <div className='flex flex-wrap'>
