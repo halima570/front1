@@ -14,7 +14,7 @@ const navigate=useNavigate()
   const formSubmitHandler = e => {
     e.preventDefault()
    
-axios.post('https://rss-pmpu.onrender.com/users/signup', {
+axios.post('https://rss-h3g4.onrender.com/users/signup', {
   username: email,
   password: password,
   firstName: firstName,
