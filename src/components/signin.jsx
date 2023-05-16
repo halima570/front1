@@ -31,7 +31,7 @@ axios.post('https://rss-h3g4.onrender.com/users/signup', {
   })
   .catch((error) => {
     // Handle error
-  });
+  });}
 
   return (
     <div className='flex flex-wrap'>
