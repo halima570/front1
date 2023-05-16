@@ -14,7 +14,7 @@ const navigate=useNavigate()
   const formSubmitHandler = e => {
     e.preventDefault()
    
-    fetch('http://localhost:8081/users/signup', {
+    fetch('https://rss-h3g4.onrender.com/users/signup', {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ username: email, password ,firstName,lastName}),
