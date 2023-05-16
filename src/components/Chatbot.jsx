@@ -10,7 +10,7 @@ function Chatboot() {
   const { t, i18n } = useTranslation();
   const [inputValue,setInputValue] = useState("")
   function handleClick(){
-    axios.post('http://localhost:5000/', {
+    axios.post('https://rss-h3g4.onrender.com', {
       text:`generate  some websites links that talks about ${inputValue}`,
     
     
